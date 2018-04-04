@@ -1,3 +1,7 @@
+'''
+bag of visual words
+'''
+
 
 import numpy as np
 import os
