@@ -20,7 +20,7 @@ def get_video_label(srcVid):
         return 5
 
 def create_labels(dataset_path):
-    dataset = pickle.load(open(dataset_path,"rb")
+    dataset = pickle.load(open(dataset_path,"rb"))
     X = []
     Y = []
 

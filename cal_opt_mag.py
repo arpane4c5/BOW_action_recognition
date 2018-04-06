@@ -53,16 +53,3 @@ def extract_optical_flow(path,target_file) :
                 features_current_file.append(feature)
 
                 prev_frame = frame
-
-                
-
-            features.append({
-                "filename": filename,
-                "features": features_current_file 
-            })
-
-            n_processed_files += 1
-            if n_processed_files % 30 == 0:
-                print("Done %d files" % n_processed_files)
-                
-    pickle.dump(features, open(os.path.join('data',target_file), "wb"))
