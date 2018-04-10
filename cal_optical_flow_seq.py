@@ -45,6 +45,8 @@ def extract_optical_flow_seq(path,target_file) :
     
     features = []
     for filename in filenames:
+            bgThresh = 105000
+
             filepath = os.path.join(data_path,filename)
             ##print(filepath)
             cap = cv2.VideoCapture(filepath)
@@ -74,8 +76,10 @@ def extract_optical_flow_seq(path,target_file) :
             fps = cap.get(cv2.CAP_PROP_FPS)
             
             for i, stime in enumerate(start_frames):
+                fgbg = cv2.createBackgroundSubtractorMOG2()
                 cap.set(cv2.CAP_PROP_POS_FRAMES, stime)
                 ret, prev_frame = cap.read()
+                fgmask = fgbg.apply(prev_frame)
 
                 prev_frame = cv2.cvtColor(prev_frame, cv2.COLOR_BGR2GRAY)
                 stime = stime + 1
@@ -86,6 +90,11 @@ def extract_optical_flow_seq(path,target_file) :
                     if not ret:
                         break
                     curr_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                    fgmask = fgbg.apply(frame)
+                    if np.sum(fgmask)<bgThresh:
+                        #print "BG frame skipped !!"
+                        prev_frame = curr_frame
+                        continue
             
                     flow = cv2.calcOpticalFlowFarneback(prev_frame,curr_frame, None, 0.5, 3, 15, 3, 5, 1.2, 0)
                     #mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
