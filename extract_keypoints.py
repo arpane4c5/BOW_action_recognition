@@ -9,6 +9,8 @@ def make_keypoints(optical_flow_data_path,target_file):
     for video in data:
         for frame in video["features"]:
             train_keypoints.append(frame)
+            print(frame.shape)
 
     print("Saving keypoints of training set")
+    
     pickle.dump(train_keypoints, open(os.path.join('data',target_file), "wb"))

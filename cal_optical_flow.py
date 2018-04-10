@@ -17,12 +17,17 @@ def extract_optical_flow(path,target_file) :
     n_processed_files = 0
     
     features = []
+    
+    
     for filename in filenames:
+            bgThresh = 105000
             filepath = os.path.join(data_path,filename)
             ##print(filepath)
-            vid = cv2.VideoCapture(filepath)
+            cap = cv2.VideoCapture(filepath)
             
-            ret,prev_frame = vid.read()
+            #fgbg = cv2.createBackgroundSubtractorMOG2()
+            ret,prev_frame = cap.read()
+            #fgmask = fgbg.apply(prev_frame)
             prev_frame = cv2.cvtColor(prev_frame,cv2.COLOR_BGR2GRAY)
             hsv = np.zeros_like(prev_frame)
             hsv[...,1] = 255
@@ -30,15 +35,24 @@ def extract_optical_flow(path,target_file) :
             # Store features in current file.
             features_current_file = []
             
+            fgbg = cv2.createBackgroundSubtractorMOG2()
+            
             while(True):
                 #print("hello 1")
-                ret, frame = vid.read()
+                ret, frame = cap.read()
                 if not ret:
                     break
                 #print("hello 2")
                 # Only care about gray scale.
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-                flows = cv2.calcOpticalFlowFarneback(prev_frame,frame, None, 0.5, 3, 15, 3, 5, 1.2, 0)
+                curr_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                
+                fgmask = fgbg.apply(frame)
+                if np.sum(fgmask)<bgThresh:
+                    #print ("BG frame skipped !!")
+                    prev_frame = curr_frame
+                    continue
+                
+                flows = cv2.calcOpticalFlowFarneback(prev_frame,curr_frame, None, 0.5, 3, 15, 3, 5, 1.2, 0)
                 feature = []
                 for r in range(120):
                     if r % 10 != 0:
@@ -49,20 +63,22 @@ def extract_optical_flow(path,target_file) :
                         feature.append(flows[r,c,0])
                         feature.append(flows[r,c,1])
                 feature = np.array(feature)
+                #print(feature.shape)==(384,)
                 #print("hello")
                 features_current_file.append(feature)
 
-                prev_frame = frame
+                prev_frame = curr_frame
 
                 
-
+            
             features.append({
                 "filename": filename,
                 "features": features_current_file 
             })
-
+            
             n_processed_files += 1
             if n_processed_files % 30 == 0:
                 print("Done %d files" % n_processed_files)
+                    
                 
     pickle.dump(features, open(os.path.join('data',target_file), "wb"))

@@ -17,6 +17,9 @@ def make_bovw(codebook_filename,dataset_filename,target_bow_filename):
     n_videos = len(dataset)
     bow = np.zeros((n_videos, clusters.shape[0]), dtype=np.float)
     
+    print("check1")
+    print(clusters[0].shape)
+    
     # Make bow vectors for all videos.
     video_index = 0
     for video in dataset:

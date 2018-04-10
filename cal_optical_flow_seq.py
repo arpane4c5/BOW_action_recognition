@@ -9,11 +9,8 @@ import pickle
 import csv
 import cv2
 
- 
-            
- 
-    
-    
+
+
 
     
     
@@ -46,7 +43,6 @@ def extract_optical_flow_seq(path,target_file) :
     features = []
     for filename in filenames:
             bgThresh = 105000
-
             filepath = os.path.join(data_path,filename)
             ##print(filepath)
             cap = cv2.VideoCapture(filepath)
@@ -90,14 +86,18 @@ def extract_optical_flow_seq(path,target_file) :
                     if not ret:
                         break
                     curr_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                    
+                    # To find the background mask and skip the frame if foreground is absent
                     fgmask = fgbg.apply(frame)
                     if np.sum(fgmask)<bgThresh:
-                        #print "BG frame skipped !!"
+                        #print ("BG frame skipped !!")
                         prev_frame = curr_frame
                         continue
             
                     flow = cv2.calcOpticalFlowFarneback(prev_frame,curr_frame, None, 0.5, 3, 15, 3, 5, 1.2, 0)
                     #mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
+                    
+                    
                     feature = []
                     for r in range(120):
                         if r % 10 != 0:
@@ -108,6 +108,7 @@ def extract_optical_flow_seq(path,target_file) :
                             feature.append(flow[r,c,0])
                             feature.append(flow[r,c,1])
                     feature = np.array(feature)
+                    #print(feature.shape)
                     features_current_file.append(feature)
                     stime = stime + 1
                     prev_frame = curr_frame
