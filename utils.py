@@ -1,9 +1,5 @@
 import numpy as np
-import os
-import pickle
 import csv
-
-from sklearn.svm import SVC
 
 # function to read the kth_sequences.txt file and return the dictionary of 
 # frame sequences where actions occur.
@@ -38,14 +34,18 @@ def get_video_label(srcVid):
     elif "walking" in srcVid:
         return 5
 
-# load the data given the path of the pkl file.
-def create_labels(dataset_path):
-    dataset = pickle.load(open(dataset_path,"rb"))
-    X = []
-    Y = []
-    for video in dataset:
-        X.append(video["features"])
-    for video in dataset:
-        label = get_video_label(video["filename"])
-        Y.append(label)
-    return X, Y
+# function to make predictions on the validation set and evaluate the results
+# Xval is the features dataframe (nvideos, 50), Yval is the labels dataframe 
+def evaluate(clf, Xval, Yval, partition="validation"):
+    print("Evaluate on "+partition+" set")
+    confusion_matrix = np.zeros((6,6))
+    pred = clf.predict(Xval)    # predict using the trained model
+    correct = 0
+    for i in range(len(Yval)):
+        if pred[i] == int(Yval.iloc[i]):
+            correct +=1
+        confusion_matrix[pred[i],int(Yval.iloc[i])] +=1
+    print("%d/%d Correct" % (correct, len(pred)))
+    print("Accuracy = {} ".format( float(correct) / len(pred) ))
+    print("Confusion matrix")
+    print(confusion_matrix)

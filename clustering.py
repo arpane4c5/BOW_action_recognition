@@ -10,7 +10,8 @@ def extract_vec_points(optical_flow_data_path):
     # Convert into magnitude space points and angle space points.
     mag_vecs = []
     ang_vecs = []
-    data = pickle.load(open(optical_flow_data_path,"rb"))
+    with open(optical_flow_data_path, "rb") as infile:
+        data = pickle.load(infile)
     # Iterate over the videos contained in the dictionary
     for k, v in data.iteritems():
         # Iterate over the 2x16x12 dimensional matrices, for each flow feature
@@ -25,16 +26,14 @@ def extract_vec_points(optical_flow_data_path):
 # function to find the clusters using KMeans
 # vecs: any dataframe representing the input space points
 # nclusters: No. of clusters to be formed
-# returns the KMeans object, containing the 
-def make_codebook(vecs, nclusters):
-#    pickle.dump(train_keypoints, open(os.path.join('data',target_file), "wb"))
+# returns the KMeans object, containing the cluster centroids
+def make_codebook(vecs, nclusters, seed=153):
     print("Clustering using KMeans: Input size -> {} :: n_clusters -> {}"\
           .format(vecs.shape, nclusters))   
     
-    #train_features = pickle.load(open(keypoints_path, "rb"))
     #clustering with k-means
     #kmeans = KMeans(init='k-means++', n_clusters=200, n_init=10, n_jobs=2, verbose=1)
-    kmeans = KMeans(n_clusters=nclusters, n_init=10, n_jobs=2)
+    kmeans = KMeans(n_clusters=nclusters, n_init=10, n_jobs=2, random_state=seed)
     kmeans.fit(vecs)
     print("Done Clustering!")
     return kmeans
