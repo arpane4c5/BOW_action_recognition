@@ -201,6 +201,41 @@ Confusion matrix
 
 ________________________________________________________
 
+
+#Centroids = 100
+
+166/192 Correct
+Accuracy = 0.864583333333 
+Confusion matrix
+[[ 26.   2.   0.   0.   0.   0.]
+ [  6.  30.   1.   0.   0.   0.]
+ [  0.   0.  31.   0.   0.   0.]
+ [  0.   0.   0.  25.   7.   1.]
+ [  0.   0.   0.   3.  23.   0.]
+ [  0.   0.   0.   4.   2.  31.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+124/192 Correct
+Accuracy = 0.645833333333 
+Confusion matrix
+[[ 18.   2.   1.   0.   0.   3.]
+ [  2.  17.   5.   1.   0.   2.]
+ [  2.   4.  26.   0.   0.   0.]
+ [  3.   2.   0.  18.   4.   8.]
+ [  7.   7.   0.  10.  26.   0.]
+ [  0.   0.   0.   3.   2.  19.]]
+
+________________________________________________________
+
+________________________________________________________
+
+________________________________________________________
+
+________________________________________________________
+
+________________________________________________________
+
+
 Random Forest (n_est = 100, max_depth=2)
 #CEntroids = 70
 135/192 Correct
@@ -250,10 +285,649 @@ Confusion matrix
 
 ________________________________________________________
 
+RandomForest(n_est = 1000, max_depth=5)
+163/192 Correct
+Accuracy = 0.848958333333 
+Confusion matrix
+[[ 28.   4.   0.   1.   0.   2.]
+ [  3.  26.   0.   0.   0.   0.]
+ [  1.   2.  32.   0.   0.   0.]
+ [  0.   0.   0.  22.   3.   2.]
+ [  0.   0.   0.   5.  27.   0.]
+ [  0.   0.   0.   4.   2.  28.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+125/192 Correct
+Accuracy = 0.651041666667 
+Confusion matrix
+[[ 18.   3.   0.   0.   1.   0.]
+ [  5.  17.   5.   1.   0.   0.]
+ [  0.   3.  27.   0.   0.   0.]
+ [  1.   1.   0.  16.   4.  11.]
+ [  7.   7.   0.  13.  27.   1.]
+ [  1.   1.   0.   2.   0.  20.]]
 ________________________________________________________
 
 ________________________________________________________
 
 ________________________________________________________
 
+Grid Size: 5
+# Centroids = 100
+BGThreshold = 60000
 
+161/192 Correct
+Accuracy = 0.838541666667 
+Confusion matrix
+[[ 23.   1.   0.   0.   0.   0.]
+ [  9.  29.   2.   0.   0.   0.]
+ [  0.   2.  30.   0.   0.   0.]
+ [  0.   0.   0.  23.   6.   2.]
+ [  0.   0.   0.   5.  26.   0.]
+ [  0.   0.   0.   4.   0.  30.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+119/192 Correct
+Accuracy = 0.619791666667 
+Confusion matrix
+[[ 18.   9.   7.   0.   0.   2.]
+ [  4.  14.   0.   0.   1.   1.]
+ [  0.   2.  23.   0.   0.   0.]
+ [  0.   0.   0.  21.   7.   6.]
+ [  8.   5.   2.   6.  23.   3.]
+ [  2.   2.   0.   5.   1.  20.]]
+
+________________________________________________________
+
+GridSize = 20 (lower dimension) 74016x48
+Centroids = 100
+BGThreshold=60000
+
+Evaluate on validation set
+158/192 Correct
+Accuracy = 0.822916666667 
+Confusion matrix
+[[ 17.   0.   1.   0.   0.   0.]
+ [ 14.  32.   1.   0.   0.   0.]
+ [  1.   0.  30.   0.   0.   0.]
+ [  0.   0.   0.  22.   4.   1.]
+ [  0.   0.   0.   5.  26.   0.]
+ [  0.   0.   0.   5.   2.  31.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+103/192 Correct
+Accuracy = 0.536458333333 
+Confusion matrix
+[[ 16.  13.   6.   2.   0.   5.]
+ [  5.   6.   1.   0.   0.   1.]
+ [  0.   3.  24.   0.   0.   0.]
+ [  2.   0.   0.  15.   9.   6.]
+ [  7.   7.   0.  12.  23.   1.]
+ [  2.   3.   1.   3.   0.  19.]]
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+
+BGThresh = 60000
+#Centroids : 70, 50
+160/192 Correct
+Accuracy = 0.833333333333 
+Confusion matrix
+[[ 23.   2.   2.   0.   0.   0.]
+ [  7.  30.   1.   0.   0.   0.]
+ [  2.   0.  28.   0.   0.   0.]
+ [  0.   0.   1.  22.   6.   1.]
+ [  0.   0.   0.   7.  26.   0.]
+ [  0.   0.   0.   3.   0.  31.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+95/192 Correct
+Accuracy = 0.494791666667 
+Confusion matrix
+[[ 14.   7.   3.   4.   0.   8.]
+ [  8.  10.   3.   0.   1.   3.]
+ [  2.   6.  23.   0.   0.   1.]
+ [  1.   2.   0.  15.   9.   6.]
+ [  6.   6.   0.   9.  21.   2.]
+ [  1.   1.   3.   4.   1.  12.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+158/192 Correct
+Accuracy = 0.822916666667 
+Confusion matrix
+[[ 21.   5.   0.   0.   0.   0.]
+ [ 10.  27.   1.   0.   0.   0.]
+ [  1.   0.  30.   0.   0.   0.]
+ [  0.   0.   1.  23.   6.   1.]
+ [  0.   0.   0.   6.  26.   0.]
+ [  0.   0.   0.   3.   0.  31.]]
+
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+
+LinearSVC (Max_Iter = 1000)
+
+BGThresh = 0 (Const)
+Grid Size = 5 (Const) Dimensions: (74016, 768)  24x32 = 768
+Centroids=100
+
+Evaluate on validation set (mag)
+146/192 Correct
+Accuracy = 0.760416666667 
+Confusion matrix
+[[ 26.   4.   0.   2.   0.   1.]
+ [  6.  25.   4.   4.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  17.   4.   0.]
+ [  0.   1.   0.   4.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+114/192 Correct
+Accuracy = 0.59375 
+Confusion matrix
+[[ 20.   6.   0.   1.   4.   2.]
+ [  6.  18.   3.   0.   1.   0.]
+ [  2.   3.  27.   0.   0.   1.]
+ [  1.   2.   1.  13.   4.   4.]
+ [  1.   0.   0.   3.  12.   1.]
+ [  2.   3.   1.  15.  11.  24.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+159/192 Correct
+Accuracy = 0.828125 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   2.   0.   3.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  20.   6.   0.]
+ [  0.   0.   0.   5.  24.   0.]
+ [  0.   0.   0.   5.   2.  29.]]
+
+
+Evaluate on validation set
+185/191 Correct
+Accuracy = 0.968586387435 
+Confusion matrix
+[[ 27.   0.   0.   0.   0.   0.]
+ [  5.  31.   0.   1.   0.   0.]
+ [  0.   0.  32.   0.   0.   0.]
+ [  0.   0.   0.  31.   0.   0.]
+ [  0.   0.   0.   0.  32.   0.]
+ [  0.   0.   0.   0.   0.  32.]]
+Evaluate on validation set
+182/191 Correct
+Accuracy = 0.952879581152 
+Confusion matrix
+[[ 29.   0.   0.   0.   0.   0.]
+ [  0.  28.   0.   0.   0.   0.]
+ [  1.   0.  29.   0.   0.   0.]
+ [  2.   3.   3.  32.   0.   0.]
+ [  0.   0.   0.   0.  32.   0.]
+ [  0.   0.   0.   0.   0.  32.]]
+Evaluate on validation set
+191/191 Correct
+Accuracy = 1.0 
+Confusion matrix
+[[ 32.   0.   0.   0.   0.   0.]
+ [  0.  31.   0.   0.   0.   0.]
+ [  0.   0.  32.   0.   0.   0.]
+ [  0.   0.   0.  32.   0.   0.]
+ [  0.   0.   0.   0.  32.   0.]
+ [  0.   0.   0.   0.   0.  32.]]
+________________________________________________________
+
+BGThresh = 10000
+
+Evaluating on the validation set (mag)
+Evaluate on validation set
+146/192 Correct
+Accuracy = 0.760416666667 
+Confusion matrix
+[[ 26.   4.   0.   2.   0.   1.]
+ [  6.  25.   4.   4.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  17.   4.   0.]
+ [  0.   1.   0.   4.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+116/192 Correct
+Accuracy = 0.604166666667 
+Confusion matrix
+[[ 20.   6.   0.   1.   2.   2.]
+ [  6.  18.   3.   0.   0.   1.]
+ [  2.   3.  27.   1.   0.   1.]
+ [  1.   2.   1.  15.   7.   6.]
+ [  1.   0.   0.   3.  15.   1.]
+ [  2.   3.   1.  12.   8.  21.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+161/192 Correct
+Accuracy = 0.838541666667 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   1.   0.   2.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  21.   6.   0.]
+ [  0.   0.   0.   5.  24.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 20000
+
+Evaluating on the validation set (mag)
+Evaluate on validation set
+147/192 Correct
+Accuracy = 0.765625 
+Confusion matrix
+[[ 26.   4.   0.   2.   0.   1.]
+ [  6.  25.   4.   3.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  18.   4.   0.]
+ [  0.   1.   0.   4.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+117/192 Correct
+Accuracy = 0.609375 
+Confusion matrix
+[[ 20.   6.   0.   1.   3.   2.]
+ [  6.  18.   3.   0.   0.   0.]
+ [  2.   3.  27.   1.   0.   1.]
+ [  1.   2.   1.  16.   9.   7.]
+ [  1.   0.   0.   3.  15.   1.]
+ [  2.   3.   1.  11.   5.  21.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+162/192 Correct
+Accuracy = 0.84375 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   0.   0.   2.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  22.   6.   0.]
+ [  0.   0.   0.   5.  24.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 30000
+Evaluating on the validation set (mag)
+Evaluate on validation set
+148/192 Correct
+Accuracy = 0.770833333333 
+Confusion matrix
+[[ 27.   4.   0.   2.   0.   1.]
+ [  5.  25.   4.   3.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  18.   4.   0.]
+ [  0.   1.   0.   4.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+119/192 Correct
+Accuracy = 0.619791666667 
+Confusion matrix
+[[ 20.   6.   0.   1.   3.   2.]
+ [  6.  18.   3.   0.   0.   0.]
+ [  2.   3.  27.   0.   0.   1.]
+ [  1.   2.   1.  19.   9.   8.]
+ [  1.   0.   0.   5.  16.   2.]
+ [  2.   3.   1.   7.   4.  19.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+161/192 Correct
+Accuracy = 0.838541666667 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   0.   0.   2.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  21.   6.   0.]
+ [  0.   0.   0.   6.  24.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 40000
+
+Evaluate on validation set
+147/192 Correct
+Accuracy = 0.765625 
+Confusion matrix
+[[ 27.   4.   0.   2.   0.   1.]
+ [  5.  25.   4.   3.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  17.   4.   0.]
+ [  0.   1.   0.   5.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+118/192 Correct
+Accuracy = 0.614583333333 
+Confusion matrix
+[[ 20.   7.   0.   1.   2.   2.]
+ [  6.  16.   3.   0.   0.   0.]
+ [  2.   3.  27.   0.   0.   1.]
+ [  1.   2.   1.  19.   9.   8.]
+ [  1.   1.   0.   6.  17.   2.]
+ [  2.   3.   1.   6.   4.  19.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+161/192 Correct
+Accuracy = 0.838541666667 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   0.   0.   2.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  21.   6.   0.]
+ [  0.   0.   0.   6.  24.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+
+________________________________________________________
+
+BGThresh = 50000
+146/192 Correct 
+Accuracy = 0.760416666667 
+Confusion matrix
+[[ 27.   5.   0.   2.   0.   1.]
+ [  5.  24.   4.   3.   1.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  17.   5.   0.]
+ [  0.   1.   0.   5.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+119/192 Correct
+Accuracy = 0.619791666667 
+Confusion matrix
+[[ 19.   8.   0.   1.   2.   2.]
+ [  6.  18.   3.   0.   0.   0.]
+ [  2.   3.  27.   0.   0.   1.]
+ [  1.   2.   1.  20.  10.   9.]
+ [  2.   0.   0.   6.  17.   2.]
+ [  2.   1.   1.   5.   3.  18.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+162/192 Correct
+Accuracy = 0.84375 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   1.   0.   0.   2.]
+ [  1.   1.  31.   0.   0.   0.]
+ [  0.   0.   0.  21.   5.   0.]
+ [  0.   0.   0.   6.  25.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 60000
+Evaluating on the validation set (mag)
+Evaluate on validation set
+146/192 Correct
+Accuracy = 0.760416666667 
+Confusion matrix
+[[ 27.   5.   0.   2.   0.   1.]
+ [  5.  24.   4.   3.   2.   5.]
+ [  0.   1.  28.   0.   0.   0.]
+ [  0.   0.   0.  17.   4.   0.]
+ [  0.   1.   0.   5.  24.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+117/192 Correct
+Accuracy = 0.609375 
+Confusion matrix
+[[ 18.   7.   0.   1.   0.   1.]
+ [  5.  17.   3.   0.   0.   0.]
+ [  3.   3.  27.   0.   0.   1.]
+ [  1.   2.   1.  18.  11.   8.]
+ [  3.   1.   0.   7.  18.   3.]
+ [  2.   2.   1.   6.   3.  19.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+164/192 Correct
+Accuracy = 0.854166666667 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   0.   0.   0.   2.]
+ [  1.   1.  32.   0.   0.   0.]
+ [  0.   0.   0.  22.   5.   0.]
+ [  0.   0.   0.   5.  25.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 70000, Max_Iter=2000
+Evaluating on the validation set (mag)
+Evaluate on validation set
+151/192 Correct
+Accuracy = 0.786458333333 
+Confusion matrix
+[[ 26.   3.   0.   2.   1.   1.]
+ [  6.  27.   3.   2.   1.   5.]
+ [  0.   0.  29.   0.   0.   0.]
+ [  0.   0.   0.  18.   3.   0.]
+ [  0.   1.   0.   5.  25.   0.]
+ [  0.   1.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+115/192 Correct
+Accuracy = 0.598958333333 
+Confusion matrix
+[[ 19.   8.   1.   1.   0.   0.]
+ [  3.  15.   2.   0.   0.   0.]
+ [  2.   4.  27.   0.   0.   2.]
+ [  1.   1.   0.  19.  12.   8.]
+ [  6.   2.   1.   7.  17.   4.]
+ [  1.   2.   1.   5.   3.  18.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+165/192 Correct
+Accuracy = 0.859375 
+Confusion matrix
+[[ 30.   5.   0.   0.   0.   0.]
+ [  1.  26.   0.   0.   0.   2.]
+ [  1.   1.  32.   0.   0.   0.]
+ [  0.   0.   0.  22.   5.   0.]
+ [  0.   0.   0.   5.  25.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 80000 (Max_iter=2000)
+
+Evaluating on the validation set (mag)
+Evaluate on validation set
+152/192 Correct
+Accuracy = 0.791666666667 
+Confusion matrix
+[[ 26.   3.   0.   2.   1.   1.]
+ [  6.  28.   3.   2.   1.   5.]
+ [  0.   0.  29.   0.   0.   0.]
+ [  0.   0.   0.  18.   3.   0.]
+ [  0.   1.   0.   5.  25.   0.]
+ [  0.   0.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+111/192 Correct
+Accuracy = 0.578125 
+Confusion matrix
+[[ 19.   6.   2.   1.   0.   0.]
+ [  2.  15.   1.   0.   0.   0.]
+ [  2.   5.  25.   0.   0.   2.]
+ [  1.   1.   0.  18.  11.  10.]
+ [  8.   4.   3.   7.  18.   4.]
+ [  0.   1.   1.   6.   3.  16.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+165/192 Correct
+Accuracy = 0.859375 
+Confusion matrix
+[[ 30.   5.   0.   0.   0.   0.]
+ [  1.  26.   0.   0.   0.   2.]
+ [  1.   1.  32.   0.   0.   0.]
+ [  0.   0.   0.  22.   5.   0.]
+ [  0.   0.   0.   5.  25.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+
+BGThresh = 90000 (max_iter=2000)
+
+Evaluating on the validation set (mag)
+Evaluate on validation set
+152/192 Correct
+Accuracy = 0.791666666667 
+Confusion matrix
+[[ 26.   2.   0.   2.   1.   1.]
+ [  6.  29.   3.   2.   1.   5.]
+ [  0.   0.  29.   0.   0.   0.]
+ [  0.   0.   0.  17.   3.   0.]
+ [  0.   1.   0.   6.  25.   0.]
+ [  0.   0.   0.   5.   2.  26.]]
+Evaluating on the validation set (ang)
+Evaluate on validation set
+110/192 Correct
+Accuracy = 0.572916666667 
+Confusion matrix
+[[ 18.   5.   0.   1.   0.   0.]
+ [  1.  13.   3.   0.   0.   0.]
+ [  1.   3.  25.   0.   0.   2.]
+ [  2.   1.   0.  19.  11.   9.]
+ [ 10.   9.   3.   7.  19.   5.]
+ [  0.   1.   1.   5.   2.  16.]]
+Evaluating on the validation set (both features)
+Evaluate on validation set
+164/192 Correct
+Accuracy = 0.854166666667 
+Confusion matrix
+[[ 29.   5.   0.   0.   0.   0.]
+ [  2.  26.   0.   0.   0.   2.]
+ [  1.   1.  32.   0.   0.   0.]
+ [  0.   0.   0.  22.   5.   0.]
+ [  0.   0.   0.   5.  25.   0.]
+ [  0.   0.   0.   5.   2.  30.]]
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+________________________________________________________
+
+
+Training with SVM (mag)
+[LibLinear]........................................................................................................................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.543492
+nSV = 16
+........................................................................................................................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.198479
+nSV = 26
+...................................................................................................................................................*......................**.**.****.
+optimization finished, #iter = 1720
+Objective value = -0.077708
+nSV = 21
+.........................................................................................*.....................................................................*.*
+optimization finished, #iter = 1594
+Objective value = -0.143714
+nSV = 44
+......................................................................*.......................................................................*...*
+optimization finished, #iter = 1446
+Objective value = -0.112447
+nSV = 33
+...............................................................................................................................................................................................*.........
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.118032
+nSV = 30
+/home/hadoop/.virtualenvs/cv/local/lib/python2.7/site-packages/sklearn/svm/base.py:898: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  "the number of iterations.", ConvergenceWarning)
+Training with SVM (ang)
+[LibLinear].................................................................................................*...................................................*.*..***.**.**
+optimization finished, #iter = 1533
+Objective value = -1.563289
+nSV = 48
+........................................................................................................................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -1.282257
+nSV = 47
+....................................................................................................*....................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.463771
+nSV = 37
+.................................................................................................................*......................................................................................*.
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -13.898105
+nSV = 62
+.................................................................................................*....................................................................................*..**.
+optimization finished, #iter = 1840
+Objective value = -9.144427
+nSV = 63
+.............................................................................................*......................................................................*.....................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -4.116434
+nSV = 64
+Training with SVM
+[LibLinear]........................................................................................................................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.014039
+nSV = 32
+........................................................................................................................................................................................................
+optimization finished, #iter = 2000
+
+WARNING: reaching max number of iterations
+Using -s 2 may be faster (also see FAQ)
+
+Objective value = -0.017328
+nSV = 40
+....................................................*...........................................*.*.*.***.
+optimization finished, #iter = 990
+Objective value = -0.005701
+nSV = 32
+..............................................................................................*.........................................................**.*
+optimization finished, #iter = 1522
+Objective value = -0.067011
+nSV = 44
+......................................................................*..................................................*
+optimization finished, #iter = 1204
+Objective value = -0.038079
+nSV = 35
+.............................................*
+optimization finished, #iter = 454
+Objective value = -0.015386
+nSV = 40

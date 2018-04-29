@@ -89,8 +89,10 @@ def create_bovw_traindf(feats_data_dict, kmeans_mag, kmeans_ang, \
     bow_ang = bow_ang * idf_ang
     
     # save idf_mag to disk
-    pickle.dump(idf_mag, open(os.path.join(idfpath,"idf_mag.pkl"), "wb"))
-    pickle.dump(idf_ang, open(os.path.join(idfpath,"idf_ang.pkl"), "wb"))
+    with open(os.path.join(idfpath,"idf_mag.pkl"), "wb") as outfile:
+        pickle.dump(idf_mag, outfile)
+    with open(os.path.join(idfpath,"idf_ang.pkl"), "wb") as outfile:
+        pickle.dump(idf_ang, outfile)
     print("Saved IDF weights to disk.")
     
     # form the training dataframe
@@ -155,8 +157,10 @@ def create_bovw_testdf(feats_data_dict, kmeans_mag, kmeans_ang, \
     # This is applicable for only the training set
     # For validation/test set, the idf will be same as for the training set
     # load idf_mag from disk
-    idf_mag = pickle.load(open(os.path.join(idfpath,"idf_mag.pkl"), "rb"))
-    idf_ang = pickle.load(open(os.path.join(idfpath,"idf_ang.pkl"), "rb"))
+    with open(os.path.join(idfpath,"idf_mag.pkl"), "rb") as infile:
+        idf_mag = pickle.load(infile)
+    with open(os.path.join(idfpath,"idf_ang.pkl"), "rb") as infile:
+        idf_ang = pickle.load(infile)
     print("Loaded IDF weights from disk.")
     bow_mag = bow_mag * idf_mag
     bow_ang = bow_ang * idf_ang
