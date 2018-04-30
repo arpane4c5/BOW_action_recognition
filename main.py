@@ -25,7 +25,7 @@ DATASET = '/home/hadoop/VisionWorkspace/KTH_OpticalFlow/dataset'
 #DATASET = '/opt/datasets/KTH'
 flow_filename = "flow_data"
 km_model_filename = "km"
-gdsize = 20
+gdsize = 5
 destpath = "data_grid"+str(gdsize)
 clf_modelname = "model_svm"
 
@@ -37,12 +37,12 @@ def main():
     print "Extract optical flow data for training set..."
     flow_filepath = os.path.join(destpath, flow_filename+"_train.pkl")
     
-    features = extract_flow_seq_train(DATASET, grid_size=gdsize)
+#    features = extract_flow_seq_train(DATASET, grid_size=gdsize)
     if not os.path.exists(destpath):
         os.makedirs(destpath)
-    with open(flow_filepath, "wb") as out_file:
-        pickle.dump(features, out_file)
-    print "Written training features to disk..."
+#    with open(flow_filepath, "wb") as out_file:
+#        pickle.dump(features, out_file)
+#    print "Written training features to disk..."
     with open(flow_filepath, 'rb') as infile:
         features = pickle.load(infile)
     
@@ -70,8 +70,8 @@ def main():
     km_file_ang = os.path.join(destpath, km_model_filename+"_ang.pkl")
     ##################################
     # Uncomment only while training.
-    km_mag = make_codebook(mag, 10)
-    km_ang = make_codebook(ang, 10)
+    km_mag = make_codebook(mag, 150)
+    km_ang = make_codebook(ang, 130)
     
     # Save to disk, if training is performed
     print("Writing the KMeans models to disk...")
@@ -139,10 +139,10 @@ def main():
     ###########################################################################
     # Evaluation on validation set
     # extract the optical flow information from the validation set videos and form dictionary
-    bgthresh = 0 # should be <=90k, to prevent error vq(mag, clusters_mag[0])
+    bgthresh = 70000 # should be <=90k, to prevent error vq(mag, clusters_mag[0])
     # 
-    target_file = os.path.join(destpath, flow_filename+"_val_BG"+str(bgthresh)+".pkl")
-    features_val = extract_flow_val(DATASET, bgthresh, grid_size=gdsize, partition="validation")
+    target_file = os.path.join(destpath, flow_filename+"_test_BG"+str(bgthresh)+".pkl")
+    features_val = extract_flow_val(DATASET, bgthresh, grid_size=gdsize, partition="testing")
     with open(target_file, "wb") as outfile:
         pickle.dump(features_val, outfile)
 
@@ -169,6 +169,8 @@ def main():
     evaluate(clf_both, df_test, labs_df)
 
     ###########################################################################
+#    import visualize as vis
+#    vis.bar_graph(df_train_mag, df_train_ang, df_train_mag.index, 150)
 
 if __name__ == '__main__':
     main()
